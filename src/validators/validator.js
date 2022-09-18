@@ -116,7 +116,7 @@ const valiforintern = async (req, res, next) => {
             return res.status(400).send({ status: false, message: "Please provide collegename. it's mandatory" })
         }
         if (!validCollegeName.test(collegeName)) {
-            return res.status(400).send({ status: false, message: "please enter valid format(for ex :Indian Institute)" })
+            return res.status(400).send({ status: false, message: "please enter valid format(for ex :iith)" })
         }
         let collegebyname = await Collegemodel.findOne({ name: collegeName, isDeleted: false })
         if (!collegebyname) {
